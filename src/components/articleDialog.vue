@@ -89,7 +89,7 @@ import { computed, ref , reactive, nextTick, watch} from 'vue'
 import { ElMessageBox, ElMessage } from 'element-plus'
 import { uploadImage,addArticle,updateArticle } from '@/api/admin'
 import { fileBaseUrl } from '@/config/index.js'
-import RichTextEditor from '@/components/richTextEditor.vue'
+import RichTextEditor from '@/components/RichTextEditor.vue'
 const props = defineProps({
   modelValue: {
     type: Boolean,
