@@ -68,35 +68,36 @@
 ## 📁 项目结构
 
 psychology/
-├── public/ # 静态公共资源
+├── public/ 静态公共资源
 ├── src/
-│ ├── api/ # API 接口层
-│ │ ├── admin.js # 后台管理 API (登录、文章管理、数据分析等)
-│ │ └── frontend.js # 用户端 API (咨询、情绪日记、文章浏览等)
-│ ├── assets/ # 项目资源文件 (样式、图片等)
-│ ├── components/ # 可复用组件
-│ │ ├── MarkdownRenderer.vue # Markdown 渲染组件
-│ │ ├── RichTextEditor.vue # 富文本编辑器组件
-│ │ ├── articleDialog.vue # 文章对话框组件
-│ │ ├── authLayout.vue # 认证页面布局 (登录/注册)
-│ │ └── backendLayout.vue # 后台管理布局
-│ ├── config/ # 配置文件
-│ ├── views/ # 页面级组件
-│ │ ├── articleDetail.vue # 文章详情页
-│ │ ├── consultation.vue # 心理咨询聊天页
-│ │ ├── consultations.vue # 咨询记录列表页
-│ │ ├── dashboard.vue # 数据看板页
+│ ├── api/ API 接口层
+│ │ ├── admin.js 后台管理 API
+│ │ └── frontend.js 用户端 API
+│ ├── assets/ 资源文件 (样式、图片等)
+│ ├── components/ 可复用组件
+│ │ ├── MarkdownRenderer.vue Markdown 渲染组件
+│ │ ├── RichTextEditor.vue 富文本编辑器组件
+│ │ ├── articleDialog.vue 文章对话框组件
+│ │ ├── authLayout.vue 认证页面布局
+│ │ └── backendLayout.vue 后台管理布局
+│ ├── config/ 配置文件
+│ ├── views/ 页面级组件
+│ │ ├── articleDetail.vue 文章详情页
+│ │ ├── consultation.vue 心理咨询聊天页
+│ │ ├── consultations.vue 咨询记录列表页
+│ │ ├── dashboard.vue 数据看板页
 │ │ └── ...
-│ ├── utils/ # 工具函数
-│ │ └── request.js # Axios 请求封装
-│ ├── App.vue # 根组件
-│ └── main.js # 应用入口
-├── .github/workflows/ # GitHub Actions CI/CD 配置
-├── .vscode/ # VSCode 编辑器配置
-├── index.html # HTML 入口文件
-├── package.json # 项目依赖配置
-├── vite.config.js # Vite 配置文件
-├── netlify.toml # Netlify 部署配置
+│ ├── utils/ 工具函数
+│ │ └── request.js Axios 请求封装
+│ ├── App.vue 根组件
+│ └── main.js 应用入口
+├── .github/workflows/ GitHub Actions CI/CD
+├── .vscode/ VSCode 配置
+├── index.html HTML 入口
+├── package.json 项目依赖
+├── vite.config.js Vite 配置
+├── netlify.toml Netlify 部署
+└── vercel.json Vercel 部署
 
 
 
