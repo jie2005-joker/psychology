@@ -3,7 +3,7 @@
     <!-- 登录头部 -->
     <div class="title">
       <!-- 返回首页 -->
-      <div class="back">
+      <div class="back" @click="handleBack" style="cursor: pointer;">
         <el-icon><Back /></el-icon>
         <span>返回首页</span>
       </div>
@@ -37,6 +37,12 @@
 <script setup>
 import {reactive, ref} from 'vue'
 import {login} from '@/api/admin'
+
+const handleBack = () => {
+  location.href = '/'
+}
+
+
 
 const ruleFormRef = ref()
 const formData = reactive({

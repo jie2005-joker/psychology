@@ -15,13 +15,14 @@
           </p>
         </div>
         <div class="hero-actions">
-          <el-button size="large">
+          <el-button size="large" @click="handleAction">
             <router-link to="/consultation" style="color: #000;">开始倾诉, 获得陪伴</router-link>
           </el-button>
           <el-button
             size="large"
             style="border: 1px solid #fff"
             color="transparent"
+            @click="handleAction"
             >
             <router-link to="/emotionDiary" style="color: #fff;">
 记录心情, 释放情感
@@ -38,7 +39,20 @@
 </template>
 
 <script setup>
+import {ElMessage} from 'element-plus'
 const robot = new URL("@/assets/images/robot-fill.png", import.meta.url).href;
+const handleAction = () => {
+  const token = localStorage.getItem('token')
+  if (!token) {
+    ElMessage({
+      message: '请先登录',
+      type: 'warning'
+    })
+    location.href = '/auth/login'
+    
+    return
+  } 
+}
 </script>
 
 <style lang="scss" scoped>

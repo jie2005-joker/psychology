@@ -1,4 +1,4 @@
-import {createRouter, createWebHashHistory } from 'vue-router'
+import {createRouter, createWebHistory } from 'vue-router'
 import {ElMessage} from 'element-plus'
 
 const backendRoutes = [
@@ -96,7 +96,7 @@ const frontendRoutes = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory (),
+  history: createWebHistory (),
   routes: [...backendRoutes, ...frontendRoutes],
 })
 

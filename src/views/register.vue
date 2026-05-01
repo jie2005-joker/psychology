@@ -33,7 +33,7 @@
         </el-form>
        
         <div class="footer">
-          <p>已有账号？</p>
+          <p>已有账号？<router-link to="/auth/login">去登录</router-link></p>
         </div>
       </div>
   </div>
