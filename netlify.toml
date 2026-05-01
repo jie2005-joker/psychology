@@ -1,0 +1,16 @@
+# 构建配置
+[build]
+  command = "npm run build"      # 构建命令（Vite 项目就是 npm run build）
+  publish = "dist"               # 构建产物目录（Vite 默认输出到 dist）
+
+# API 请求转发（生产环境代理）
+[[redirects]]
+  from = "/api/*"                # 匹配所有以 /api/ 开头的请求
+  to = "http://159.75.169.224:1235/:splat"   # 转发到你的后端服务器
+  status = 200                   # 保持 200 状态码（而非 301/302 重定向）
+  force = true                   # 强制执行，即使有匹配的文件也走这个规则
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
