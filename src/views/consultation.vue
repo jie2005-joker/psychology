@@ -95,7 +95,7 @@
                         {{ session.messageCount }}</span>
                       <span>
                         <el-icon><Clock /></el-icon>
-                        {{ session.durationMinutes / 60 > 24 ? session.durationMinutes / 60 / 24 + '天前' : Math.floor(session.durationMinutes / 60) + '小时前' }}
+                        {{ session.durationMinutes / 60 > 24 ? Math.floor(session.durationMinutes / 60 / 24) + '天前' : Math.floor(session.durationMinutes / 60) + '小时前' }}
                         </span>
                     </div>
                 </div>
