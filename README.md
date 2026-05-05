@@ -63,7 +63,6 @@
 | **路由管理** | Vue Router |
 | **HTTP 客户端** | Axios (封装于 `src/utils/request`) |
 | **语言** | JavaScript |
-| **部署平台** | Netlify, Vercel |
 
 ## 📁 项目结构
 
@@ -96,9 +95,6 @@ psychology/
 ├── index.html HTML 入口
 ├── package.json 项目依赖
 ├── vite.config.js Vite 配置
-├── netlify.toml Netlify 部署
-└── vercel.json Vercel 部署
-
 
 
 ## 🛠️ 开发指南
@@ -188,9 +184,6 @@ Vite 配置
     构建选项
     插件配置
 
-部署配置
-
-Netlify: 查看 netlify.toml
 
 📝 开发规范
 
