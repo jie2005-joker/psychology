@@ -19,13 +19,13 @@
     "element-plus": "^2.13.7",
     "lodash.isequal": "^4.5.0",
     "pinia": "^3.0.4",
-    "vue": "^3.5.32",
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^6.0.5",
+    "@vitejs/plugin-vue": "^6.0.6",
     "gh-pages": "^6.3.0",
     "sass-embedded": "^1.99.0",
-    "vite": "^8.0.4"
+    "vite": "^8.0.4",
+    "vue": "^3.5.33"
   }
 }
