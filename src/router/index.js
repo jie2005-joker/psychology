@@ -100,35 +100,6 @@ const router = createRouter({
   routes: [...backendRoutes, ...frontendRoutes],
 })
 
-// 前置守卫
-// router.beforeEach((to, from, next) => {
-//   const token = localStorage.getItem('token')
-//   if(token){
-//     const userInfo = JSON.parse(localStorage.getItem('userInfo'))
-//     if(userInfo.userType === 2){
-//       if(to.path.startsWith('/back')){
-//       next()
-//       }else{
-//         next('/back/dashboard')
-//       }
-//     }else if(userInfo.userType === 1){
-//       if(to.path.startsWith('/back')){
-//         ElMessage.error('您没有权限访问该页面')
-//         next('/auth/login')
-//       }else{
-//         next('/')
-//       }
-//     }
-//   }else{
-//     if(to.path.startsWith('/back')){
-//       ElMessage.error('请先登录')
-//       next('/auth/login')
-//     }else{
-//       next()
-//     }
-//   }
-// })
-
 router.beforeEach((to, from, next) => {
   const token = localStorage.getItem('token')
 
