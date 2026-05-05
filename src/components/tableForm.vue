@@ -1,4 +1,5 @@
 <template>
+  <!-- 表格查询单组件 -->
   <div>
     <el-form :model="formData" ref="ruleFormRef" :gutter="24">
       <el-row>

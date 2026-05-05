@@ -57,6 +57,7 @@ const formData = reactive({
   "userType": 1, //权限（默认传1）
 });
 
+// 注册表单验证规则
 const rules = reactive({
   username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
   email: [{ required: true, message: '请输入邮箱', trigger: 'blur' }],
@@ -77,6 +78,7 @@ const rules = reactive({
   ]
 })
 
+// 注册表单提交事件
 const submitForm = async () => {
   submitFormRefEl.value.validate(async (valid) => {
     if (!valid) return
@@ -99,31 +101,6 @@ const submitForm = async () => {
     }
   })
 }
-
-// const submitForm = async () => {
-//   submitFormRefEl.value.validate(async (valid) => {
-//     if (!valid) return
-
-//     try {
-//       // 打印 1：你传给后端的完整数据
-//       console.log("【发送给后端】", formData);
-
-//       const res = await register(formData);
-
-//       // 打印 2：后端原始返回结果
-//       console.log("【后端返回】", res);
-
-//       if (res.success) {
-//         ElMessage.success("注册成功！");
-//       } else {
-//         ElMessage.error(res.msg || "注册失败");
-//       }
-
-//     } catch (err) {
-//       console.error("【catch错误】", err);
-//     }
-//   })
-// }
 
 </script>
 

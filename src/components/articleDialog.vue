@@ -116,7 +116,9 @@ const dialogVisible = computed({
   }
 })
 
+// 对封面图片进行一系列操作
 const imageUrl = ref('')
+    //上传图片前校验
 const beforeImgUpload = (file) => {
   //  console.log(file)
   if(!file.type.startsWith('image/')) {
@@ -130,8 +132,9 @@ const beforeImgUpload = (file) => {
   return true
 }
 const businessId = ref(null)
+    //上传图片后处理
 const handleUploadRequest = async ({file}) =>  {
-  // 生成UUID
+  // 随机生成UUID
   businessId.value = crypto.randomUUID()
 
   const res = await uploadImage(file, {businessId: businessId.value}) 
@@ -140,11 +143,13 @@ const handleUploadRequest = async ({file}) =>  {
   imageUrl.value = fileBaseUrl + res.filePath
   formData.value.coverImage = res.filePath
 }
-
+// 移除封面图片
 const removeImage = () =>{
   imageUrl.value = ''
   formData.value.coverImage = ''
 }
+
+// 情绪标签
 const tagOptions = reactive([
   { value: '情绪管理', label: '情绪管理' },
   { value: '焦虑', label: '焦虑' },
@@ -170,6 +175,7 @@ const formData = ref({
   content: ''
 })
 
+// 对标签进行判断
 const tagJudge = () => {
   if (formData.value.tags.length > 3) {
     ElMessageBox({
@@ -182,6 +188,7 @@ const tagJudge = () => {
   }
 }
 
+// 提交表单时校验规则
 const emit = defineEmits(['update:modelValue', 'submit'])
 const formRef = ref()
 const rules = ref({
@@ -190,6 +197,7 @@ const rules = ref({
   content: [{required: true, message: '请输入文章内容', trigger: 'blur'}]
 })
 
+// 关闭弹窗
 const handleClose = () => {
 
   dialogVisible.value = false
@@ -202,6 +210,7 @@ const handleClose = () => {
   formData.value.content = ''
 }
 
+// 提交表单
 const handleSubmit = () => {
   formRef.value.validate((valid) => {
     if (valid) {
@@ -244,6 +253,7 @@ const handleSubmit = () => {
     }
   })
 }
+
 // 富文本
 const handleContentChange = (content) => {
   formData.value.content = content.html
@@ -261,7 +271,7 @@ const editorRef = ref(null)
 
  const previewVisible = ref(false)
 
-
+// 监听文章详情变化,如果没有内容,代表是新增文章,清空原先的表单数据; 否则,将文章详情赋值给表单数据
 watch(() => props.articleDetail, (newVal) => {
   if(!newVal) {
     // console.log(1)
@@ -276,6 +286,7 @@ watch(() => props.articleDetail, (newVal) => {
     return
   }
   else{
+    // nextTick作用: 等待DOM更新完成,再执行后续操作
     nextTick(() => {
       Object.assign(formData.value, newVal)
       // formData.value.summary =

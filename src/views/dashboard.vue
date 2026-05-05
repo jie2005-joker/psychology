@@ -405,6 +405,7 @@ const initConsultationChart = () => {
   });
 };
 
+// 初始化用户活跃度趋势图表
 const activityChart = ref(null);
 const activityChartRef = ref(null);
 const initActivityChart = () => {
@@ -416,6 +417,7 @@ const initActivityChart = () => {
 
   const userActivity = analysisData.value.userActivity;
 
+  // 配置图表选项
   activityChart.value.setOption({
     title: {
       text: "用户活跃度趋势",

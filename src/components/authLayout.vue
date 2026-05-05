@@ -1,4 +1,5 @@
 <template>
+  <!-- 登录注册布局 -->
   <div class="auth-layout">
     <div class="left-section">
       <div class="content">

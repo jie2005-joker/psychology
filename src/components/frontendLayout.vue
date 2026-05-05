@@ -1,4 +1,5 @@
 <template>
+  <!-- 前台布局 -->
   <div class="frontend-layout">
     <div class="navbar-container">
       <div class="brand-section">

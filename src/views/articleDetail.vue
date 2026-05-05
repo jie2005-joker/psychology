@@ -1,4 +1,5 @@
 <template>
+  <!-- 知识文章详情页面 -->
   <div class="articleDetail-container">
     <div class="header-section">
       <div class="header-content">

@@ -49,6 +49,7 @@ const formData = reactive({
   username: '',
   password: ''
 })
+// 登录表单验证规则
 const rule = reactive({
   username: [
     {require: true, message: "请输入用户名或邮箱", trigger: 'blur'}
@@ -57,6 +58,7 @@ const rule = reactive({
     {require: true, message: "请输入密码", trigger: 'blur'}
   ]
 })
+// 登录表单提交事件
 const submitForm = async (formEl) => {
   if(!formEl) return 
   await formEl.validate((valid,fields) => {

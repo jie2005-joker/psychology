@@ -1,4 +1,5 @@
 <template>
+  <!-- 页面标题组件 -->
   <div class="page-head">
     <p class="page-title">{{props.title}}</p>
     <div class="action-btn">

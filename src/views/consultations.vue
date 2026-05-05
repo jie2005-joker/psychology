@@ -99,6 +99,7 @@ onMounted(() => {
   handleSearch()
 })
 
+// 处理详情点击事件
 const handleDetail = (row) => {
   console.log(row)
   dialogVisible.value = true

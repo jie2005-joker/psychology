@@ -2,7 +2,7 @@ import { ElMessage } from 'element-plus'
 import axios from 'axios'
 
 const server = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,       //基地址
+  baseURL: '/api',       //基地址
   timeout: 5000          //超时时间
 })
 

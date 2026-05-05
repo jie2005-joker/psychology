@@ -1,4 +1,5 @@
 <template>
+  <!-- ai助手咨询页面 -->
     <div class="consultation-container">
       <div class="sidebar">
         <!-- ai助手信息 -->
@@ -42,6 +43,7 @@
                 <div class="suggestion-icon">
                  💝
                 </div>
+                <!-- 温馨建议内容,仅当有建议时显示 -->
                 <div class="suggestion-content" v-if="emotionData.suggestion">
                   <div class="suggestion-title">
                      给你的小建议
@@ -149,6 +151,7 @@
                  <div class="message-avatar">
                     <el-image :src="msg.senderType === 1 ? imgUrl1 : imgUrl" style="width: 20px; height: 20px;"></el-image>
                 </div>
+                <!-- 消息内容区域,对ai的消息进行特殊处理 -->
                 <div class="message-content">
                   <div class="message-bubble">
                    <!-- ai正在思考中... -->
@@ -216,6 +219,7 @@ const imgUrl1 = new URL('@/assets/images/users.png', import.meta.url).href
 const imgUrl2 = new URL('@/assets/images/like.png', import.meta.url).href
 
 const isnegative = ref(false)
+// 初始值
 const emotionData = reactive({
   primaryEmotion: '中性',
   emotionScore: 50,
@@ -235,6 +239,7 @@ const getEmotionDot = (score) => {
   }
 }
 
+// 风险等级文本映射
 const getRiskText = (riskLevel) => {
   switch(riskLevel){
     case 0:
@@ -250,6 +255,7 @@ const getRiskText = (riskLevel) => {
   }
 }
 
+// 获取会话分析
 const getSessionAna = (sessionId) => {
   sessionId = sessionId.toString().startsWith('session_') ? sessionId : 'session_' + sessionId
   getSessionAnalysis(sessionId).then(res => {

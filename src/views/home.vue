@@ -1,4 +1,5 @@
 <template>
+  <!-- 首页内容 -->
   <div class="home-container">
     <div class="content">
       <div class="text">
@@ -40,7 +41,9 @@
 
 <script setup>
 import {ElMessage} from 'element-plus'
-const robot = new URL("@/assets/images/robot-fill.png", import.meta.url).href;
+const robot = new URL("@/assets/images/robot-fill.png", import.meta.url).href
+
+// 处理操作按钮点击事件
 const handleAction = () => {
   const token = localStorage.getItem('token')
   if (!token) {

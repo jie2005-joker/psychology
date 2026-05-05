@@ -1,4 +1,5 @@
 <template>
+  <!-- 侧边栏组件 -->
   <el-aside width="ifCollapse? '64px' : '264px'">
     <el-menu
         :collapse="isCollapse"

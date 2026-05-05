@@ -66,11 +66,13 @@ const recommendList = ref([])
 
 const articleList = ref([])
 
+// 分页切换
 const changeCurrentPage = (page) => {
   pagination.currentPage = page
   getArticleList()
 }
 
+// 处理文章详情点击事件
 const handleArticleDetail = (id) => {
   router.push(`/knowledge/article/${id}`)
 }
@@ -82,12 +84,14 @@ const getImg = (img) => {
   return img ? 'http://159.75.169.224:1235' + img : 'https://file.itndedu.com/psychology_ai.png'
 }
 
+// 页码配置
 const pagination = reactive({
   currentPage: 1,
   size: 10,
   total: 0
 })
 
+// 获取推荐文章列表
 const getArticleList = () => {
   const params = {
     sortField: 'publishedAt',

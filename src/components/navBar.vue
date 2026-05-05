@@ -1,4 +1,5 @@
 <template>
+  <!-- 导航栏组件 -->
   <div class="nav-bar">
     <div class="flex-box">
       <el-button @click="toggleSide">
